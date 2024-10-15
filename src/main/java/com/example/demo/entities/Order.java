@@ -37,7 +37,7 @@ public class Order implements Serializable{
 	@JoinColumn(name = "client_id") //chave estrangeira
 	private User client;
 
-	@OneToMany(mappedBy = "id.order")
+	@OneToMany(mappedBy = "id.order") //a order vem do id que é a chave pk do OrderItem
 	private Set<OrderItem> items = new HashSet<>();
 	
 	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
